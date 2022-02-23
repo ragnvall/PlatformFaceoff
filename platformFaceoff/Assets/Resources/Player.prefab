@@ -341,7 +341,6 @@ MonoBehaviour:
   rotationFactoredPerFrame: 15
   jumpHeight: 25
   maxSpeed: 50
-  isTester: 0
 --- !u!114 &3699217968749715061
 MonoBehaviour:
   m_ObjectHideFlags: 0
