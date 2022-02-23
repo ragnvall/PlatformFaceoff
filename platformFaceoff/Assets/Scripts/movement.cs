@@ -25,14 +25,14 @@ public class movement : MonoBehaviour
 
     PhotonView view;
 
-    public bool isTester = false;
+   
     
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         view = GetComponent<PhotonView>();
-        if (!view.IsMine && !isTester)
+        if (!view.IsMine)
         {
             Destroy(cam);
             Destroy(cmvCam);
@@ -43,7 +43,7 @@ public class movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (view.IsMine || isTester)
+        if (view.IsMine)
         {
             inputx = Input.GetAxis("Horizontal");
             inputy = Input.GetAxis("Vertical");
@@ -66,7 +66,7 @@ public class movement : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (view.IsMine || isTester)
+        if (view.IsMine)
         {
             if (jump && canJump)
             {
@@ -86,7 +86,7 @@ public class movement : MonoBehaviour
     }
     private void OnCollisionStay(Collision collision)
     {
-        if (view.IsMine || isTester)
+        if (view.IsMine)
         {
             canJump = true;
         }
@@ -94,7 +94,7 @@ public class movement : MonoBehaviour
     }
     private void OnCollisionExit(Collision collision)
     {
-        if (view.IsMine || isTester)
+        if (view.IsMine)
         {
             canJump = false;
         }
