@@ -8,18 +8,21 @@ public class ConnectToServer : MonoBehaviourPunCallbacks
     // Start is called before the first frame update
     void Start()
     {
-        print("connecting using settings");
+        
         PhotonNetwork.ConnectUsingSettings();
+        print("connecting using settings");
     }
     public override void OnConnectedToMaster()
     {
-        print("joining lobby");
+        
         PhotonNetwork.JoinLobby();
+        print("joining lobby");
     }
     public override void OnJoinedLobby()
     {
-        print("loading Scene");
+        
         SceneManager.LoadScene("Lobby");
+        print("loading Scene");
     }
 
 }
