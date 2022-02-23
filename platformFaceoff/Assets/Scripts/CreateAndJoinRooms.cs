@@ -16,13 +16,15 @@ public class CreateAndJoinRooms : MonoBehaviourPunCallbacks
 
     public void joinRoom()
     {
-        print("joining Room");
+        
         PhotonNetwork.JoinRoom(joinInput.text);
+        print("joining Room");
     }
 
     public override void OnJoinedRoom()
     {
-        print("loading Mainscene");
+        
         PhotonNetwork.LoadLevel("Main");
+        print("loading Mainscene");
     }
 }
